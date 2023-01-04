@@ -1,0 +1,150 @@
+\documentclass[12pt]{report}
+
+\usepackage[a4paper]{geometry}
+%\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, a4paper}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{caption}
+\graphicspath{}
+\usepackage[document]{ragged2e}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage[slovene]{babel}
+\usepackage{textcomp, gensymb}
+\usepackage{siunitx}
+\usepackage{pdfrender,xcolor}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{float}
+\usepackage{titlesec}
+
+\newfloat{slika}{htbp}{loc}
+\floatname{slika}{Slika}
+
+\newfloat{tabela}{htbp}{loc}
+\floatname{tabela}{Tabela}
+
+\title{
+  \includegraphics[width=0.4\textwidth]{fmf_logo}\\
+  {\small Oddelek za fiziko} \\
+  {Torzijsko nihalo}\\
+  {\small Poročilo pri fizikalnem praktikumu III}\\
+
+}
+\date{}
+\author{ avtor: Kristofer Č. Povšič \\[5 cm]
+ \small  Asistentka: Jelena Vesić
+}
+
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\setcounter{page}{2}
+
+\maketitle
+
+\chapter*{Uvod}
+
+O strižni napetosti $\frac{F}{S}$ govorimo takrat, ko leži sila v ravnini ploskve, v kateri prijemlje, v nasprotju s tlačno silo, ki je pravokotna na ploskev. Za strižno napetost velja enačba:
+
+\begin{equation}
+  \frac{F}{S} = G \alpha
+\end{equation}
+
+Torzijski koeficient žice je sorazmernostni faktor med navorom in kotom $\varphi$, zasukom prostega konca žice: 
+
+\begin{equation}
+  M = D \varphi
+\end{equation}
+
+Torzijski koeficient je za zasuke, ki niso preveliki, povezan s strižno napetostjo G preko 
+
+\begin{equation} \label{eq:2}
+  D = \frac{\pi \rho^4G}{2l}
+\end{equation}
+
+pri čemer je $\rho$ polmer, $l$ pa dolžina žice. Če na spodnji konec viseče žice obesimo telo in ga zasukom, lahko opazujemo torzijsko nihanje. Za majhne zasuke je to nihanje harmonično in velja: 
+
+\begin{equation} \label{eq:1}
+  t_0= 2\pi \sqrt{\frac{J}{D}}
+\end{equation}
+
+\chapter*{Naloga}
+
+\begin{enumerate}
+  \item Določi torzijski koeficient D žice
+  \item Izračunaj strižni modul G jekla, iz katerega je žica
+  \item Določi vztrajnostni moment in vztrajnostni radij danega telesa (kvadra z valjasto votlino) iz meritve nihajnega časa torzijskega nihala in primerjaj rezultate z izračunanim vztrajnostnim momentom. 
+  \item Določi vztrajnostni moment zobnika. 
+\end{enumerate}
+
+
+\begingroup
+\let\clearpage\relax
+
+\chapter*{Potrebščine}
+\begin{itemize}
+\item stojalo, jeklena žica, plošča z ročajem
+\item uteži: votel kovinski valj, kvader z valjasto votlino
+\item tehtnica, štoparica, kljunasto merilo, mikrometer
+\end{itemize}
+
+\chapter*{Navodilo}
+Izmeri dolžino in debeline žice nihaja. Nanjo obesi ploščo z ročajem. Izmeri nihajni čas nihala pri prazni plošči, votlim valjem in še s kvadrom z valjasto odprtino ter zobnik. Pri vsaki meritvi izmeri čas 10 nihajev s štoparico. Kotne amplitude pri nihanju naj bodo majhne. 
+\endgroup
+
+
+\chapter*{Obdelava podatkov}
+
+Izmerjeni so bili sledeči podatki: 
+
+Debelina žice $d = (0.63 \pm 0.05)mm$ in dolžina žice $l = (29 \pm 0.5)cm$. 
+
+Izmerim in izračunamo naslednje povprečne čase za prazno ploščo, ploščo z valjem, ploščo s kvadrom in ploščo z zobnikom: 
+
+\begin{tabela}[H]
+  \centering
+  \[
+  \begin{array}{|c|c|c|c|c|}\hline
+    \text{meritev} & t_p[s] & t_v[s] & t_k[s] & t_z[s] \\ \hline
+    1 & 1.874 & 5.263 & 3.666 & 2.943 \\ \hline
+    2 & 1.888 & 5.317 & 3.624 & 2.986 \\ \hline
+    3 & 1.897 & 5.300 & 3.636 & 2.895 \\ \hline
+    \\ \hline
+    \overline{t}[s] & 1.886 & 5.293 & 3.642 & 2.941 \\\hline
+    \sigma_t[s] & 0.009 & 0.023 & 0.018 & 0.037 \\ \hline
+  \end{array}
+  \]
+\end{tabela}
+
+Z izmerjenimi podatki valja: masa valja $m_v = (2500 \pm 1)g$, manjši radij $r = (15 \pm 87.2)mm$, veliki radij $R = (87.2 \pm 0.1)mm$ in višino $h = (50 \pm 0.1)mm$. 
+
+Iz teh podatkov izračunam vztrajnostni moment valja $J = (2.446 \pm 0.007)gm^2$. Za nihalo z valjem po enačbi \ref{eq:1}: 
+\begin{equation}
+  D = (J_p + J_v)\left(\frac{2\pi}{t_v}\right)^2
+\end{equation}
+za $J_p$ pa tudi velja $J_p = D (\frac{t_p}{2\pi})^2$. 
+
+Tako izračunamo torzijski koeficient žice $D = (3.94 \pm 0.04)mNm$. Iz enačbe \ref{eq:2} izračunamo strižni koeficient $G = (7 \pm 1)kN/mm^2$. 
+
+Analogno velja tudi za poljubno telo, ki ga položimo na ploščo tako, da os vrtenja prebada njegovo težišče. Za kvader z luknjo tako dobimo rezultat $J_k = (0.97 \pm 0.02)gm^2$ in za zobnik $J_z = 0.53 \pm 0.01gm^2$. 
+
+Za kvader z luknjo sem izmeril sledeče rezultate: masa kvadra $m_k = (1193\pm1)g$, stranica $a = (60 \pm 0.05)mm$ in premer valja $d = (40 \pm 0.05)mm$. 
+
+Vztrajnostni moment za kvader se tako zapiše: 
+
+\begin{equation}
+  J_k = \sigma\left(\frac{S_k}{12}(2a^2) - \frac{S_v}{2}\left(\frac{d}{2}\right)^2\right)
+\end{equation}
+
+Iz enačbe poračunamo $J_k = (0.98 \pm 0.002)gm^2$. 
+
+\end{document}
