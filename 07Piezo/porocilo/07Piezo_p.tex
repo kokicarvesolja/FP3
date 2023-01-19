@@ -1,0 +1,142 @@
+\documentclass[12pt]{report}
+
+\usepackage[a4paper]{geometry}
+%\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, a4paper}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{caption}
+\graphicspath{}
+\usepackage[document]{ragged2e}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage[slovene]{babel}
+\usepackage{textcomp, gensymb}
+\usepackage{siunitx}
+\usepackage{pdfrender,xcolor}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{float}
+\usepackage{titlesec}
+
+\newfloat{slika}{htbp}{loc}
+\floatname{slika}{Slika}
+
+\newfloat{tabela}{htbp}{loc}
+\floatname{tabela}{Tabela}
+
+\title{
+  \includegraphics[width=0.4\textwidth]{fmf_logo}\\
+  {\small Oddelek za fiziko} \\
+  {Piezoelektričnost}\\
+  {\small Poročilo pri fizikalnem praktikumu III}\\
+
+}
+\date{}
+\author{ Kristofer Č. Povšič \\[5 cm]
+ \small  Asistentka: Jelena Vesić
+}
+
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\setcounter{page}{2}
+
+\maketitle
+
+\chapter*{Uvod}
+
+Kristali v feroelektričnem stanju so tudi piezoelektrični: mehanska obremenitev spremeni električno polarizacijo in obratno, zunanje električno polje, v katerem je kristal, povzroči deformacijo kristala. Vzrok zaa to je sklopitev med mehansko in električno energijo kristala. 
+
+Piezoelektrični efekt dobimo pri kristalih, ki nimajo centra simetrije. 
+
+Piezoelektrično se odzovejo na deformacijo s polarizacijo snovi. Lokalno deformacijo v točki s silo $\text{d}\vec{F}_i$, $i = 1, 2, 3$, podano z napetostnim tenzorjem $T_{i,j}$, $i,j = 1,2,3$ defofinirano kot
+\begin{equation}
+  T_{i,j} = \frac{1}{2}\left(\frac{\text{d}\vec{F}_i}{\text{d}S_j} + \frac{\text{d}\vec{F}_j}{\text{d}S_i}\right)
+\end{equation}
+
+kjer so $\text{d}S_i$, $i=1,2,3$ tri med seboj pravokotno orientirane površine delovanja sile $\text{d}\vec{F}$. Elemente tenzorja $d_{i,j,k}$ imenujemo "piezoelektrični moduli". Praktično jih merimo v izbranih smereh kristala. Električni naboj merimo na izbrani ploskvi, mehanska obremenitev pa je lahko tlak na ploskev, upogib ali torzija. Kot piezoelektrik največkrat uporabimo kvarc v obliki ploščic ali piezoleketrično keramiko, v obliki ploščic, ki so polarizirano pravokotno na ploskev. Uporabljamo jih za merjenje tlaka in sil (mikrofoni/generatorji ultrazvoka). 
+
+Pomembni pa so tudi za delovanje vrstičnega tunelskega mikroskopa. 
+
+Pri vaji bomo izmerili odziv piezoelektričnih ploščic in piezoelektrične keramike. V tem primeru ima tenzor $d_{i,j,k}$ tri neodvisne elemente. To so $d_{121}$, $d_{311}$, $d_{333}$, če je os z izbrana vzporedno z začetno polarizacijo keramike. S silo $\vec{F}$, pravokotno na $S$ ustvarimo tlačno napetost $T=T_{33} = \frac{F}{S}$ in povzročimo nastanek polarizacije $P_3 = \text{d}T$. V snovi vzdolž z-osi velja med $P_3$ in gostoto električnega polarizacije
+\begin{equation}
+  D = \varepsilon \varepsilon_0 E + \text{d}T
+\end{equation}
+
+kjer je $\varepsilon$ električna konstanta pri konstantni napetosti, temperaturi in $d=d_{333}$. Naboj na eni ploskvi kondenzatorja oz. ploščice keramike je $q = DS$ in z upoštevanjem povezave med električno jakostjo in napetostjo $E= \frac{U}{b}$ dobimo, da je naboj
+
+\begin{equation}
+  q = \frac{\varepsilon \varepsilon_0 S}{b} U + \text{d}F
+\end{equation}
+
+Opazimo, da je 1. člen le drug način, da je napišemo na ploščatem kondenzatorju s ploščino S in debelino b s kapaciteto: 
+\begin{equation}
+  C = \frac{\varepsilon \varepsilon_0 S}{b}
+\end{equation}
+
+Torej 
+
+\begin{equation} 
+  q = CU + text{d}F
+\end{equation}
+
+Kondenzator praznimo preko uporanika $R = 5G\omega (1 \pm 0.02)$  s tokom $I = -\dot{q}$. Padec napetosti
+
+\begin{equation}
+  U = RI = -R\dot{q}
+\end{equation}
+
+Spremljamo na osciloskopu preko povratno vezanega ojačevalnika (voltage follower). Dobimo diferencialno enačbo za časovni potek napetosti
+
+\begin{equation}
+  \dot{U} = -\frac{1}{\tau} U - \frac{d}{C}\dot{F}
+\end{equation}
+
+kjer je $\tau = RC$. Sedaj obravnavamo oba predvidena scenarija spremembe napetosti na kristalu, za katere je 
+\begin{equation}
+  F_s(t) = F_0 \theta(st)\\
+  \theta = 
+  \begin{cases}
+    1, & \ t \geq 0 \\
+    0, & \text{sicer}
+  \end{cases}
+\end{equation}
+
+kjer je $F_0$ teža uteži, $s$ pa pozitiven, če prihaja do obremenjevanja in negativen
+
+\chapter*{Naloga}
+
+
+\begingroup
+\let\clearpage\relax
+
+\chapter*{Potrebščine}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\chapter*{Navodilo}
+
+\endgroup
+
+
+\chapter*{Obdelava podatkov}
+
+
+
+\chapter*{Izračunane vrednosti}
+
+
+\chapter*{Komentar}
+
+
+
+\end{document}
