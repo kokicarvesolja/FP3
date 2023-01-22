@@ -1,0 +1,191 @@
+\documentclass[12pt]{report}
+
+\usepackage[a4paper]{geometry}
+%\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, a4paper}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{caption}
+\graphicspath{}
+\usepackage[document]{ragged2e}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage[slovene]{babel}
+\usepackage{textcomp, gensymb}
+\usepackage{siunitx}
+\usepackage{pdfrender,xcolor}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{float}
+\usepackage{titlesec}
+
+\newfloat{slika}{htbp}{loc}
+\floatname{slika}{Slika}
+
+\newfloat{tabela}{htbp}{loc}
+\floatname{tabela}{Tabela}
+
+\title{
+  \includegraphics[width=0.4\textwidth]{fmf_logo}\\
+  {\small Oddelek za fiziko} \\
+  {Zemeljsko magnetno polje}\\
+  {\small Poročilo pri fizikalnem praktikumu III}\\
+
+}
+\date{}
+\author{ avtor: Kristofer Č. Povšič \\[5 cm]
+ \small  Asistentka: Jelena Vesić
+}
+
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\setcounter{page}{2}
+
+\maketitle
+
+\chapter*{Uvod}
+
+Zemljo obdaja šibko magnetno polje, ki ga bomo izmerili z dvema različnima metodama. 
+
+\section*{Kompenzacijska metoda}
+
+Kompas in tuljavo, katere dolga os je pod majhnim kotom $\delta$ glede na zemeljsko magnetno polje. Na tuljavo priključimo na napajanje in spreminjamo tok ter opazujemo obnašanje igle. Če toka ni, igla kaže v smeri zemeljskega magnetnega polja. Če pa je polje tuljave močnejše od zemeljskega, se bo igla poravnala z njim pod kotom $delta$ glede na zemeljskega. Preko poznanega polja tuljave lahko potem izračunamo tudi zemeljskega. Tuljava je prekratka in zato uporabimo natančnejšo formulo: 
+
+\begin{equation}
+  B_T = \frac{\mu_0 I N}{\sqrt{L^2 + d^2}}
+\end{equation}
+
+pri čemer je $N$ število ovojev, $I$ tok, ki teče skozi tuljavo, $L$ dolžina ter $d$ premer tuljave. 
+
+\section*{Gaussova metoda}
+
+Pri Gaussovi metodi izmerimo dve količini: produkt in razmerje magnetnega dipola $p$ ter zemeljskega magnetnega polja $B_Z$.
+
+Za meritev produkta uporabimo viseče vodoravno nihalo, kjer se dipol - paličast magnet - v vodoravni ravnini vrti okoli osi $z$. Nihanje je harmonično in njegova perioda je 
+
+\begin{equation}
+  t_0 = 2\pi \frac{J}{pB_Z}
+\end{equation}
+
+V drugem delu eksperimenta pomerimo razmerje med konstantnim zemeljskim ter z razdaljo padajočim poljem dipola. Na leseno letev s kompasom, ki je vzporedna smeri zemeljskega polja, postavimo na razdalo $r$ od kompasa dipol. Velja torej: 
+
+\begin{equation}
+  \tan \alpha = \frac{\mu_0 p}{4\pi r^3 B_Z}
+\end{equation}
+
+Iz česar lahko po eksperimentu izračunamo razmerje $\frac{p}{B_Z}$.
+
+
+\chapter*{Naloga}
+
+\begin{enumerate}
+  \item Izmeri vodoravno komponento gostote zemeljskega magnetnega polja s komponezacijo in po Gaussovi metodi. 
+  \item Določi magnetni moment paličastega magneta. 
+\end{enumerate}
+
+\begingroup
+\let\clearpage\relax
+
+\chapter*{Potrebščine}
+\begin{itemize}
+  \item tuljava na vrtljivi letvi s pritrjenim kompasom
+  \item nastavljivi tokovni izvor
+  \item ampermeter, žice, upor $R = (68 \pm 7)\Omega$
+  \item ravnilo s kompasom
+  \item paličasti magnet
+  \item nihalo: vrvica s plastičnim držalom v obliki tulca
+  \item štoparica, tehtnica in kljunasto merilo
+\end{itemize}
+
+\endgroup
+
+
+\chapter*{Obdelava podatkov}
+
+\section*{Kompenzacijska metoda}
+
+Izmerimo in preštejemo število ovojev $N = 60$, dolžino $L = (60 \pm 0.5)cm$ ter premer tuljave $d = (12.7 \pm 0.6)cm$. 
+
+Za prvi del meritev sem dobil sledeče podatke: 
+
+
+\begin{tabela}[H]
+  \centering
+  \[
+    \begin{array}{|c|c|} \hline
+      \alpha [\degree] & I [mA] \\ \hline
+      20.00 &  205.20\\
+      15.00 &  193.60\\
+      10.00 &  180.00\\
+       5.00 &  134.20 \\ \hline
+   \end{array}
+ \]
+\end{tabela}
+
+Izračunamo vrednosti magnetnega polja za vse rezultate in dobimo povprečno vrednost magnetnega polja 
+
+\[ B_T = (21.9 \pm 0.2) \mu T\]
+
+\section*{Gaussova metoda}
+
+Lastnosti magneta so: masa $m_m = (44.0 \pm 0.5)g$, $2r = (16.0 \pm 0.5) mm$ in $l = (45 \pm 0.5)mm$. Lastnosti plastičnega tulca so: $m_t = (6.0 \pm 0.5)g$, $2r_1 = (17.0 \pm 0.5)mm$, $2r_2 = (19.0 \pm 0.5)mm$ in $L = (50 \pm 0.5)mm$. 
+
+\begin{tabela}[H]
+  \centering
+  \[
+    \begin{array}{|c|} \hline
+      20 t_0 [s] \\ \hline
+      23.97 \\ 
+      23.68 \\
+      23.96 \\ \hline 
+    \end{array}
+  \]
+\end{tabela}
+
+
+
+
+\begin{tabela}[H]
+  \centering
+  \[
+    \begin{array}{|c|c|} \hline
+      x [cm] & \overline{\alpha}[\degree] \\ \hline
+      23.75 &   60.00\\
+      26.75 &   49.00\\
+      31.75 &   33.00\\
+      36.75 &   22.00\\
+      41.75 &   15.00\\
+      46.75 &   10.00\\
+      51.75 &    7.00 \\ \hline
+   \end{array}
+  \]
+\end{tabela}
+
+Iz podanih podatkov lahko izračunamo vsoto vztrajnostnega momenta magneta in tulca $J = (9.6 \pm 0.2) mgm^2$. Nihajni čas magneta je $t_0 = (2.38 \pm 0.01) s$. 
+
+Produkt je tako 
+
+\[ pB_z = (6.7 \pm 0.2) mJ\]. 
+
+Iz podatkov v tabeli izračunamo povprečno vrednost razmerja 
+
+\[ \frac{p}{B_Z} = 200 \pm 28mJ/T^2\]
+
+Iz podatkov produkta in razmerja lahko nato izračunamo zemeljsko magnetno polje: 
+
+\[ B_Z = (18 \pm 1) \mu T\]
+
+\chapter*{Komentar}
+
+Vidimo, da sta si rezultata podobna, pri čemer nam kompenzacijska metoda da bolj natančen rezultat. Prednost Gaussove metode zaradi katere je tudi manj natančna je to, da zanjo ne potrebujemo zelo natančnega ampermetra. 
+
+
+\end{document}
